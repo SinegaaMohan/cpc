@@ -1,0 +1,39 @@
+
+This project includes scripts to verify that the system is properly configured to run TensorFlow-based machine learning tasks with GPU support. Before running more advanced operations, it's crucial to ensure the compatibility of various components such as CUDA, cuDNN, TensorFlow version, and the necessary C/C++ compiler. This ensures that the system can handle deep learning workloads efficiently.
+
+What This Code Does
+
+TensorFlow Version and Build Information:
+
+Verifies that the installed TensorFlow version has been built with CUDA and cuDNN support.
+Provides detailed build information, such as the version of CUDA and cuDNN installed, the C/C++ compiler used during the build, and other system details.
+Confirms the TensorFlow version currently installed on the system.
+CUDA and cuDNN Compatibility Check:
+
+The scripts check whether the system's CUDA Toolkit (NVIDIA's parallel computing platform) and cuDNN (CUDA Deep Neural Network library) are correctly installed and compatible with the current TensorFlow version.
+If CUDA and cuDNN are incompatible or missing, TensorFlow will fall back to CPU, significantly slowing down model training and inference.
+GPU Availability:
+
+Checks if any GPUs are available on the system for TensorFlow to use.
+If no GPU is detected or compatible, TensorFlow will default to using the CPU, which is typically slower for machine learning tasks.
+Benchmark Performance:
+
+The included benchmark script performs a matrix multiplication operation and calculates the TFLOPS (teraflops), a measure of GPU performance. This provides an indication of the system's computational capacity, confirming whether TensorFlow is leveraging the GPU effectively.
+C/C++ Compiler:
+
+The script also reports the C/C++ compiler used in building TensorFlow. For TensorFlow to work with CUDA, you must have a compatible GCC or MSVC (on Windows) compiler. Mismatched compiler versions can cause build failures or runtime errors.
+How to Use This Project
+Run the system check scripts to confirm if your system is properly set up with CUDA, cuDNN, and TensorFlow.
+Check the output to verify the TensorFlow build info, GPU availability, and performance (TFLOPS).
+If any issues are reported (e.g., missing GPU support or incompatible versions), follow the recommended steps to install the correct versions of CUDA Toolkit, cuDNN, and TensorFlow, and ensure you have the proper C/C++ compiler installed.
+Requirements
+CUDA Toolkit: A specific version compatible with your TensorFlow installation. Refer to the official TensorFlow documentation for the correct versions.
+cuDNN: The version of cuDNN must match your CUDA version.
+TensorFlow: The TensorFlow version should be compatible with your CUDA and cuDNN versions.
+C/C++ Compiler: Ensure that you have a compatible version of GCC (Linux/macOS) or MSVC (Windows) installed on your system.
+References
+For more details on compatibility between CUDA, cuDNN, and TensorFlow, and for instructions on installation, please refer to:
+
+TensorFlow GPU Support
+NVIDIA CUDA Toolkit
+NVIDIA cuDNN Library

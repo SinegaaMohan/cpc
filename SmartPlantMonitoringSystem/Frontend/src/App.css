@@ -1,0 +1,80 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.homepage {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.agribot-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.1; /* Makes it translucent */
+  z-index: -1; /* Puts it behind the content */
+  background-image: url("/images/Agribot.png"); /* If the image is in public folder */
+  background-size: 50%; /* Adjust size as needed */
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  animation: slide 15s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.foreground-content {
+  position: relative;
+  z-index: 1; /* Makes sure the content stays above the background */
+  text-align: center;
+  color: black; /* Adjust color as needed */
+  padding-top: 100px; /* Push content down if needed */
+}
